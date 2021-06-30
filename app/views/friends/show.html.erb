@@ -1,24 +1,17 @@
-<p id="notice"><%= notice %></p>
+<div class="container-fluid text-sm-center p-5 bg-light rounded-5">
+  <h1 class="display-2"><%= @friend.first_name %> <%= @friend.last_name %></h1>
 
-<p>
-  <strong>First name:</strong>
-  <%= @friend.first_name %>
-</p>
+  <p>
+    <strong>Email:</strong>
+    <%= @friend.email %>
+  </p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @friend.last_name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @friend.email %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @friend.phone %>
-</p>
-
-<%= link_to 'Edit', edit_friend_path(@friend) %> |
-<%= link_to 'Back', friends_path %>
+  <p>
+    <strong>Phone:</strong>
+    <%= @friend.phone %>
+  </p>
+  <div class="mt-4">
+    <%= link_to 'Edit', edit_friend_path(@friend), class: "btn btn-dark" %>
+    <%= link_to 'Back', friends_path, class: "btn btn-dark" %>
+  </div>
+</div>
