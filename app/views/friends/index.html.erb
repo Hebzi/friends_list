@@ -1,11 +1,9 @@
-<h1>Friends</h1>
-
 <% if user_signed_in? %>
+  <h1>Friends</h1>
   <table class="table table-striped table-hover table-bordered">
     <thead class="table-dark">
     <tr>
-      <th>First name</th>
-      <th>Last name</th>
+      <th>Name</th>
       <th>Email</th>
       <th>Phone</th>
       <th colspan="3"></th>
@@ -16,14 +14,13 @@
     <% @friends.each do |friend| %>
       <tr>
         <% if friend.user == current_user %>
-          <td><%= friend.first_name %></td>
-          <td><%= friend.last_name %></td>
+          <td><%= friend.first_name %> <%= friend.last_name %></td>
           <td><%= friend.email %></td>
           <td><%= friend.phone %></td>
 
-          <td><%= link_to 'Show', friend, class: "text-decoration-none" %></td>
-          <td><%= link_to 'Edit', edit_friend_path(friend), class: "text-decoration-none" %></td>
-          <td><%= link_to 'Destroy', friend, method: :delete, data: { confirm: 'Are you sure?' }, class: "text-decoration-none" %></td>
+          <td><%= link_to 'Show', friend, class: "text-decoration-none btn btn-outline-dark btn-sm" %></td>
+          <td><%= link_to 'Edit', edit_friend_path(friend), class: "text-decoration-none btn btn-outline-secondary btn-sm" %></td>
+          <td><%= link_to 'Delete', friend, method: :delete, data: { confirm: 'Are you sure?' }, class: "text-decoration-none btn btn-outline-danger btn-sm" %></td>
         <% end %>
       </tr>
     <% end %>
@@ -36,9 +33,5 @@
   <%= link_to 'New Friend', new_friend_path, class: "btn btn-dark" %>
 
 <% else %>
-  <h4 class="mt-4 mb-3">Sign in to create your friends list! :)</h4>
-  <p>
-    <%= link_to 'Sign in', new_user_session_path, class: "btn btn-dark" %>
-    <%= link_to 'Sign up', new_user_registration_path, class: "btn btn-dark" %>
-  </p>
+  <%= render "home/index" %>
 <% end %>
