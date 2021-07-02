@@ -33,15 +33,17 @@
       </div>
 
       <div class="actions mt-3">
-        <%= f.submit "Update", class: "btn btn-dark" %>
+        <p>
+          <%= f.submit "Update", class: "btn btn-dark" %>
+          <%= link_to "Back", :back, class: "btn btn-outline-secondary" %>
+        </p>
       </div>
     <% end %>
-    <%= link_to "Back", :back, class: "btn btn-outline-secondary mt-2" %>
   </div>
 </div>
 
 
-<div class="card mt-5">
+<div class="card mt-5 mb-3">
   <h3 class="card-header">Delete my account</h3>
   <div class="card-body">
     <p>You can delete your account by clicking this
