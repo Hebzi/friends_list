@@ -1,3 +1,10 @@
 # Friends List App
 
-[https://ror-friendslist.herokuapp.com/](https://ror-friendslist.herokuapp.com/)
+Simple CRUD application.
+
+https://ror-friendslist.herokuapp.com/
+
+### Sign in with:
+
+**Email:** testuser@gmail.com\
+**Password:** testuserpassword
